@@ -1,0 +1,189 @@
+/* Import fonts once at the top */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Playwrite+AU+SA:wght@100..400&display=swap');
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+    background: url('back.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Header styles */
+.header {
+    width: 100%;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(236, 101, 193, 0.2);
+    text-shadow: 5px 5px 0 #000,
+                 1px 1px 0 #f075aa,
+                 2px 2px 0 #b2c5f3,
+                 3px 3px 0 #cecff6;
+    background-color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.header .logos-container,
+.header .user-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between elements */
+}
+
+.header h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+/* Logos */
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Content Container */
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+/* Left Section */
+.left-section {
+    width: 60%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Right Section */
+.right-section {
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Video styles */
+.video-container {
+    margin-bottom: 20px;
+}
+
+img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Info Box styles */
+.info-box h2 {
+    margin: 20px 0 10px;
+}
+
+/* Chatbox Container */
+#chatBox {
+    padding: 10px;
+    width: 100%;
+    max-width: 1000px;
+    height: 400px; /* Consistent height */
+    overflow-y: auto;
+    background-color: rgba(61, 61, 61, 0.8); /* Semi-transparent dark background */
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #333;
+    border: 1px solid #ccc; /* Optional: keep if you want a border */
+}
+
+/* Form styles */
+#chatForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#userMessage {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#userMessage:focus {
+    outline: none;
+    background-color: #d9d9d9;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #ff3838; /* Red button color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #fe5858; /* Lighter red on hover */
+}
+
+/* Footer styles */
+footer {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: auto;
+}
+
+/* Chat message styles */
+.user-message {
+    text-align: right;
+    background-color: #ffe5f8;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+}
+
+.bot-message {
+    text-align: left;
+    background-color: #e5ffca;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+}
