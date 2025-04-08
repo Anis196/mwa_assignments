@@ -11,6 +11,11 @@ import re
 from tensorflow.keras.utils import img_to_array
 import threading
 import os
+from dotenv import load_dotenv
+
+load_dotenv()  # Load variables from .env
+
+api_key = os.getenv("GOOGLE_API_KEY")
 
 app = Flask(__name__, static_url_path='/static')
 emotion_labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Neutral', 'Sad', 'Surprise']
@@ -23,7 +28,7 @@ max_emotion = None
 max_count = 0
 lock = threading.Lock()
 
-os.environ['GOOGLE_API_KEY'] = "AIzaSyBCtxI3nT607F8GWE_pkwbSSYXHRQJNfA4"
+os.environ['GOOGLE_API_KEY'] = api_key
 
 def predict_emotion(face_image):
     face_image = cv2.imdecode(np.frombuffer(face_image, np.uint8), cv2.IMREAD_COLOR)

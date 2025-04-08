@@ -12,7 +12,11 @@ from tensorflow.keras.utils import img_to_array
 import threading
 import os
 from langchain.memory import ConversationBufferMemory
+from dotenv import load_dotenv
 
+load_dotenv()  # Load variables from .env
+
+api_key = os.getenv("GOOGLE_API_KEY")
 
 app = Flask(__name__,static_url_path='/static')
 emotion_labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Neutral', 'Sad', 'Surprise']
@@ -108,7 +112,7 @@ def detection():
     cam.release()
     cv2.destroyAllWindows()
 
-os.environ['GOOGLE_API_KEY'] = "AIzaSyBCtxI3nT607F8GWE_pkwbSSYXHRQJNfA4"
+os.environ['GOOGLE_API_KEY'] = api_key
 
 def initialize_bot(current_mood):
     from langchain_google_genai import ChatGoogleGenerativeAI  # make sure this import is present

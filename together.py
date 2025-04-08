@@ -11,6 +11,11 @@ from langchain.chains import LLMChain
 import re
 import threading
 import os
+from dotenv import load_dotenv
+
+load_dotenv()  # Load variables from .env
+
+api_key = os.getenv("GOOGLE_API_KEY")
 
 app = Flask(__name__, static_url_path='/static')
 
@@ -24,7 +29,7 @@ max_emotion = None
 max_count = 0
 lock = threading.Lock()
 
-os.environ['GOOGLE_API_KEY'] = "AIzaSyBCtxI3nT607F8GWE_pkwbSSYXHRQJNfA4"
+os.environ['GOOGLE_API_KEY'] = api_key
 
 def predict_emotion(face_image):
     try:
